@@ -16,8 +16,10 @@ import java.io.InputStream;
 
 import io.realm.internal.IOException;
 
+//import io.realm.internal.Context;
+
 /**
- * Created by Prof.hamamoto on 2017/08/21.
+ * Created by hamamoto professor on 2017/08/08.
  */
 
 public class MyUtils {
@@ -30,22 +32,18 @@ public class MyUtils {
             double outSize=(double)(opt.outHeight*opt.outWidth)/500000;
             bitmapSize=(int)(Math.sqrt(outSize)+1);
         }
-
         opt.inJustDecodeBounds=false;
         opt.inSampleSize=bitmapSize;
         Bitmap bmp=BitmapFactory.decodeByteArray(bytes,0,bytes.length,opt);
         return bmp;
     }
-
     public static byte[] getByteFromImage(Bitmap bmp){
         ByteArrayOutputStream stream=new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.PNG,100,stream);
         byte[] byteArray=stream.toByteArray();
         return byteArray;
     }
-
-    public static Bitmap getImageFromStream(ContentResolver resolver, Uri uri)
-        throws IOException{
+    public static Bitmap getImageFromStream(ContentResolver resolver, Uri uri) throws IOException, java.io.IOException {
         InputStream in;
         BitmapFactory.Options opt=new BitmapFactory.Options();
         opt.inJustDecodeBounds=true;
@@ -57,7 +55,6 @@ public class MyUtils {
             double outSize=(double)(opt.outHeight*opt.outWidth)/500000;
             bitmapSize=(int)(Math.sqrt(outSize)+1);
         }
-
         opt.inJustDecodeBounds=false;
         opt.inSampleSize=bitmapSize;
         in=resolver.openInputStream(uri);
@@ -65,11 +62,11 @@ public class MyUtils {
         in.close();
         return bmp;
     }
-
     public static void tintMenuIcon(Context context, MenuItem item, @ColorRes int color){
         Drawable normalDrawable=item.getIcon();
         Drawable wrapDrawable= DrawableCompat.wrap(normalDrawable);
-        DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(context, color));
+        DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(context,color));
         item.setIcon(wrapDrawable);
     }
 }
+

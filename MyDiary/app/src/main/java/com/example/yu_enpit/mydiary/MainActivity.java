@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements DiaryListFragment
 
         mRealm=Realm.getDefaultInstance();
 
-        createTestData();
+        //createTestData();
         showDiaryList();
     }
 

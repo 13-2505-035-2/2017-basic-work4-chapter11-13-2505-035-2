@@ -94,4 +94,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="pick_image">画像を選択します</string>
+    <string name="rationale">端末内の画像を読み取って日記に表示するには許可をタップします。</string>
+    <string name="permission_deny">端末内の画像を読み取るためのパーミッションが必要です。</string>
 </resources>
