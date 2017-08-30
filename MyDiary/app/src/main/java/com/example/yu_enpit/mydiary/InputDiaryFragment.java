@@ -96,7 +96,6 @@ public class InputDiaryFragment extends Fragment {
                 });
             }
         });
-
         mBodyEdit.addTextChangedListener(new TextWatcher(){
             @Override
             public void beforeTextChanged(CharSequence s,int start,int count,int after){}
